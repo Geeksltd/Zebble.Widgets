@@ -13,4 +13,7 @@
     <None Include="$(MSBuildThisFileDirectory)NuGet\CreatePackage.bat" />
     <None Include="$(MSBuildThisFileDirectory)NuGet\NuGet.nuspec" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Row.cs" />
+  </ItemGroup>
 </Project>
