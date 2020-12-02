@@ -18,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ContentFrame.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CloseButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Buttons.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Links.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Row.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Shadow.cs" />
   </ItemGroup>
