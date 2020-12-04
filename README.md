@@ -35,7 +35,7 @@ You can use this element to show some elements horizontally. There is an example
 
 #### Center
 
-This element is using to show an element in the middle (horizontally) of its parents.
+This element is using to show an element in the middle (horizontally) of its parents ([implementation](/Shared/Center.cs)).
 
 ```xml
 <z-place inside="Body">
