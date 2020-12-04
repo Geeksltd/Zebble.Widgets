@@ -21,7 +21,7 @@ A Zebble plugin that contains different components which help you to create simp
 
 ### Components
 
-#### Row
+### Row
 
 You can use this element to show some elements horizontally. There is an example to create a header which contains a title and a close button:
 
@@ -32,8 +32,9 @@ You can use this element to show some elements horizontally. There is an example
 </Row>
 ```
 
+---
 
-#### Center
+### Center
 
 This element is using to show an element in the middle (horizontally) of its parents ([implementation](/Shared/Center.cs)).
 
@@ -48,7 +49,9 @@ This element is using to show an element in the middle (horizontally) of its par
   </z-place>
 ```
 
-#### CloseIcon
+---
+
+### CloseIcon
 
 You can use this element to create a close button for a page or a popup like below:
 
@@ -59,7 +62,9 @@ You can use this element to create a close button for a page or a popup like bel
 </Row>
 ```
 
-#### ContentFrame
+---
+
+### ContentFrame
 
 The ContentFrame is a container which by default has some predefined styles to show the elements like a card.
 
@@ -78,7 +83,9 @@ The ContentFrame is a container which by default has some predefined styles to s
 
 ```
 
-#### Primary and Secondary buttons
+---
+
+### Primary and Secondary buttons
 
 ```xml
 <z-place inside="Body">
@@ -91,7 +98,9 @@ The ContentFrame is a container which by default has some predefined styles to s
 </z-place>
 ```
 
-#### Link
+---
+
+### Link
 
 This element is a button with a Link style
 
@@ -104,7 +113,9 @@ This element is a button with a Link style
 </Center>
 ```
 
-#### SafeArea
+---
+
+### SafeArea
 
 The purpose of SafeArea is to render content within the safe area boundaries of a device.
 
