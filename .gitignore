@@ -25,3 +25,4 @@ GCopReport.json
 *.csproj.bak
 Zebble-LicenseAgreement.txt
 Zebble.Plugin.Map/Shared/NuGet.exe
+Shared/NuGet/NuGet.exe
