@@ -1,4 +1,10 @@
 [logo]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/NuGet/Icon.png "Zebble.Widgets"
+[row]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/Row.png "Row ScreenShot"
+[center]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/Row.png "Center ScreenShot"
+[closeicon]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/Row.png "CloseIcon ScreenShot"
+[contentframe]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/ContentFrame.png "ContentFrame ScreenShot"
+[links]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/Links.png "Links ScreenShot"
+[buttons]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/Buttons.png "Buttons ScreenShot"
 
 
 ## Zebble.Widgets
@@ -23,7 +29,7 @@ A Zebble plugin that contains different components which help you to create simp
 
 ### Row
 
-You can use this element to show some elements horizontally. There is an example to create a header which contains a title and a close button:
+You can use this element to show some elements horizontally. There is an example to create a header which contains a title and a close button ([implementation](/Shared/Row.cs)):
 
 ```xml
 <Row Id="Header">
@@ -31,6 +37,9 @@ You can use this element to show some elements horizontally. There is an example
     <CloseButton Id="Close" on-Touched="CloseTouched" />
 </Row>
 ```
+<br>
+
+![row]
 
 ---
 
@@ -48,12 +57,15 @@ This element is using to show an element in the middle (horizontally) of its par
     </Center>
   </z-place>
 ```
+<br>
+
+![center]
 
 ---
 
 ### CloseIcon
 
-You can use this element to create a close button for a page or a popup like below:
+You can use this element to create a close button for a page or a popup like below ([implementation](/Shared/CloseButton.cs)):
 
 ```xml
 <Row Id="Header">
@@ -61,12 +73,15 @@ You can use this element to create a close button for a page or a popup like bel
     <CloseButton Id="Close" on-Touched="CloseTouched" />
 </Row>
 ```
+<br>
+
+![closeicon]
 
 ---
 
 ### ContentFrame
 
-The ContentFrame is a container which by default has some predefined styles to show the elements like a card.
+The ContentFrame is a container which by default has some predefined styles to show the elements like a card ([implementation](/Shared/ContentFrame.cs)).
 
 ```xml
 <z-place inside="Body">
@@ -82,10 +97,15 @@ The ContentFrame is a container which by default has some predefined styles to s
 </z-place>
 
 ```
+<br>
+
+![contentframe]
 
 ---
 
 ### Primary and Secondary buttons
+
+([implementation](/Shared/Buttons.cs))
 
 ```xml
 <z-place inside="Body">
@@ -97,12 +117,15 @@ The ContentFrame is a container which by default has some predefined styles to s
     </Center>
 </z-place>
 ```
+<br>
+
+![buttons]
 
 ---
 
 ### Link
 
-This element is a button with a Link style
+This element is a button with a Link style ([implementation](/Shared/Links.cs)).
 
 ```xml
 <Center>
@@ -112,12 +135,15 @@ This element is a button with a Link style
   <CancelLink Id="MyCancelLink" on-Tapped="OptionsTapped" Text="Options" />
 </Center>
 ```
+<br>
+
+![links]
 
 ---
 
 ### SafeArea
 
-The purpose of SafeArea is to render content within the safe area boundaries of a device.
+The purpose of SafeArea is to render content within the safe area boundaries of a device ([implementation](/Shared/SafeArea.cs)).
 
 ```csharp
 public class MyPage : Page
@@ -136,6 +162,8 @@ public class MyPage : Page
     }
 }
 ```
+
+---
 
 #### ListItem & ListCard
 
