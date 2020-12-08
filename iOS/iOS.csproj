@@ -36,28 +36,27 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SkiaSharp, Version=2.80.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <HintPath>..\packages\SkiaSharp.2.80.2\lib\xamarinios1.0\SkiaSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="SkiaSharp.Views.iOS, Version=2.80.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <HintPath>..\packages\SkiaSharp.Views.2.80.2\lib\xamarinios1.0\SkiaSharp.Views.iOS.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="Zebble.BoxShadow.iOS, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Zebble.BoxShadow.1.2.140\lib\Xamarin.iOS10\Zebble.BoxShadow.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Zebble.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Zebble.4.5.387\lib\Xamarin.iOS10\Zebble.iOS.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Zebble-LicenseAgreement.txt" />
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>9.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="SkiaSharp">
+      <Version>2.80.2</Version>
+    </PackageReference>
+    <PackageReference Include="SkiaSharp.Views">
+      <Version>2.80.2</Version>
+    </PackageReference>
+    <PackageReference Include="Zebble">
+      <Version>4.5.402</Version>
+    </PackageReference>
+    <PackageReference Include="Zebble.BoxShadow">
+      <Version>1.2.140</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -67,11 +66,13 @@
   <Target Name="BeforeBuild">
     <Error Condition="!Exists('..\Shared\Shared.projitems')" Text="This project references Shared that are missing on this computer." />
   </Target>
-  <Import Project="..\packages\SkiaSharp.2.80.2\build\xamarinios1.0\SkiaSharp.targets" Condition="Exists('..\packages\SkiaSharp.2.80.2\build\xamarinios1.0\SkiaSharp.targets')" />
+  <Import Project="E:\Nuget\packages\SkiaSharp\2.80.2\build\xamarinios1.0\SkiaSharp.targets" 
+		  Condition="Exists('E:\Nuget\packages\SkiaSharp\2.80.2\build\xamarinios1.0\SkiaSharp.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\SkiaSharp.2.80.2\build\xamarinios1.0\SkiaSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.2.80.2\build\xamarinios1.0\SkiaSharp.targets'))" />
+    <Error Condition="!Exists('E:\Nuget\packages\SkiaSharp\2.80.2\build\xamarinios1.0\SkiaSharp.targets')" 
+		   Text="$([System.String]::Format('$(ErrorText)', 'E:\Nuget\packages\SkiaSharp.2.80.2\build\xamarinios1.0\SkiaSharp.targets'))" />
   </Target>
 </Project>

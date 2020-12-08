@@ -28,7 +28,7 @@ namespace Zebble
     {
         public Link(bool showInCenter = false) : base(showInCenter)
         {
-            Css.Width(Length.AutoStartegy.Content);
+            Css.Width(Length.AutoStrategy.Content);
         }
 
         public override async Task OnPreRender()

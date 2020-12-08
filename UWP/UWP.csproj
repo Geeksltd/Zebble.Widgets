@@ -124,7 +124,7 @@
       <Version>2.80.2</Version>
     </PackageReference>
     <PackageReference Include="Zebble">
-      <Version>4.5.387</Version>
+      <Version>4.5.402</Version>
     </PackageReference>
     <PackageReference Include="Zebble.BoxShadow">
       <Version>1.2.140</Version>

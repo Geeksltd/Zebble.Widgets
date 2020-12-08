@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Zebble.Widgets</id>
-    <version>1.1.100</version>
+    <version>1.1.101</version>
     <title>Widgets for Zebble (Xamarin)</title>
     <description>Some UI Widgets.</description>
     <projectUrl>https://github.com/Geeksltd/Zebble.Widgets</projectUrl>
@@ -11,16 +11,13 @@
     <owners>Geeks Ltd</owners>
     <copyright>Copyright © 2020 Geeks Ltd - All rights reserved.</copyright>
     <dependencies>
-      <group targetFramework="MonoAndroid10">
-        <dependency id="Zebble" version="4.5.387" />
+      <group targetFramework="MonoAndroid10">        
         <dependency id="Zebble.BoxShadow" version="1.2.140" />
       </group>
-      <group targetFramework="Xamarin.iOS10">
-        <dependency id="Zebble" version="4.5.387" />
+      <group targetFramework="Xamarin.iOS10">        
         <dependency id="Zebble.BoxShadow" version="1.2.140" />
       </group>
-      <group targetFramework="UAP10">
-        <dependency id="Zebble" version="4.5.387" />
+      <group targetFramework="UAP10">        
         <dependency id="Zebble.BoxShadow" version="1.2.140" />
       </group>
     </dependencies>
