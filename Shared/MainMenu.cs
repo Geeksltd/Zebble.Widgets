@@ -10,6 +10,7 @@ namespace Zebble
 
         public MainMenu()
         {
+            AutoFlash = false;
             Nav.Navigating.Event += Collapse;
             Overlay.Default.Tapped.Event += Collapse;
             Tapped.Event += Collapse;
