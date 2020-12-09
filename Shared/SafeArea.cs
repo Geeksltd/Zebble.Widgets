@@ -2,12 +2,19 @@
 
 namespace UI.Templates
 {
-    public class SafeArea : Canvas
+    public class TopUnsafeAreaFiller : Canvas
     {
-        public SafeArea()
+        public TopUnsafeAreaFiller()
         {
-            Css.Height(Root.ActualHeight);
             Css.Padding(top: Zebble.Device.Screen.SafeAreaInsets.Top);
+        }
+    }
+
+    public class BottomUnsafeAreaFiller : Canvas
+    {
+        public BottomUnsafeAreaFiller()
+        {
+            Css.Padding(bottom: Zebble.Device.Screen.SafeAreaInsets.Bottom);
         }
     }
 }

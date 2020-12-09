@@ -28,11 +28,10 @@ namespace Zebble
         {
             await base.OnPreRender();
 
-            Text.Css.Font(size: 11);
-            Title.Css.Font(size: 14, bold: true);
+            Title.Css.Font(size: 17, bold: true);
             Description.Css.Font(size: 10);
             Chevron.Css.Font(size: 14).TextAlignment(Alignment.Middle).Padding(top: 10, bottom: 10);
-            Index.Css.Font(size: 11).TextAlignment(Alignment.Middle).Padding(top: 10, bottom: 10);
+            Index.Css.Font(size: 17).TextAlignment(Alignment.Middle).Padding(top: 10, bottom: 10);
             Icon.Css.Size(60);
 
             await Add(HorizontalRow);

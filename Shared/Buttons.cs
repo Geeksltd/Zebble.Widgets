@@ -3,38 +3,17 @@ using System.Threading.Tasks;
 
 namespace Zebble
 {
-    public abstract class BaseButton : Button
+    public class PrimaryButton : Button
     {
-        bool ShowInCenter;
-
-        public BaseButton(bool showInCenter = false) => ShowInCenter = showInCenter;
-
-        public override async Task OnInitializing()
+        public PrimaryButton(string text = null)
         {
-            await base.OnInitializing();
-
-            if (ShowInCenter) await Add(InCenter());
-        }
-
-        Center InCenter()
-        {
-            var result = new Center();
-            result.Add(this).RunInParallel();
-            return result;
-        }
-    }
-
-    public class PrimaryButton : BaseButton
-    {
-        public PrimaryButton(string text = null, bool showInCenter = false) : base(showInCenter)
-        {
-            Css.BackgroundColor = "#ff005c";
+            Css.BackgroundColor = "#333";
             Text = text;
         }
     }
 
     public class SecondaryButton : PrimaryButton
     {
-        public SecondaryButton(string text = null, bool showInCenter = false) : base(text, showInCenter) => Css.BackgroundColor = "#686868";
+        public SecondaryButton(string text = null) : base(text) => Css.BackgroundColor = "#aaa";
     }
 }

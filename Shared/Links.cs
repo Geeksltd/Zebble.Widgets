@@ -3,30 +3,9 @@ using System.Threading.Tasks;
 
 namespace Zebble
 {
-    public abstract class BaseLink : TextView
+    public class Link : TextView
     {
-        bool ShowInCenter;
-
-        public BaseLink(bool showInCenter = false) => ShowInCenter = showInCenter;
-
-        public override async Task OnInitializing()
-        {
-            await base.OnInitializing();
-
-            if (ShowInCenter) await Add(InCenter());
-        }
-
-        Center InCenter()
-        {
-            var result = new Center();
-            result.Add(this).RunInParallel();
-            return result;
-        }
-    }
-
-    public class Link : BaseLink
-    {
-        public Link(bool showInCenter = false) : base(showInCenter)
+        public Link()
         {
             Css.Width(Length.AutoStrategy.Content);
         }
@@ -40,9 +19,9 @@ namespace Zebble
         }
     }
 
-    public class CancelLink : BaseLink
+    public class CancelLink : TextView
     {
-        public CancelLink(bool showInCenter = false) : base(showInCenter)
+        public CancelLink()
         {
             Css.TextColor = Color.Parse("#c8c8c8");
             Css.Opacity = 0.7f;
