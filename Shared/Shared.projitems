@@ -24,7 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ListCard.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ListItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Row.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SafeArea.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnsafeAreaFiller.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Shadow.cs" />
   </ItemGroup>
 </Project>

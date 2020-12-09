@@ -1,4 +1,5 @@
 ﻿using Zebble;
+using System;
 
 namespace UI.Templates
 {
@@ -6,7 +7,19 @@ namespace UI.Templates
     {
         public TopUnsafeAreaFiller()
         {
-            Css.Padding(top: Zebble.Device.Screen.SafeAreaInsets.Top);
+            Css.Padding(top: GetValue());
+        }
+
+        float GetValue()
+        {
+            var result = Zebble.Device.Screen.SafeAreaInsets.Top;
+
+#if UWP
+            if (System.Diagnostics.Debugger.IsAttached)
+                result = result.LimitMin(30f);
+#endif
+
+            return result;
         }
     }
 
