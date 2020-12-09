@@ -5,7 +5,25 @@
 [contentframe]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/ContentFrame.PNG "ContentFrame ScreenShot"
 [links]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/Links.PNG "Links ScreenShot"
 [buttons]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/Buttons.PNG "Buttons ScreenShot"
-
+[lst1]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/Text.PNG "Result Text"
+[lst2]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/TextChevron.PNG "Result TextChevron"
+[lst3]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/Title.PNG "Result Title"
+[lst4]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/TitleChevron.PNG "Result TitleChevron"
+[lst5]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/TitleDescription.PNG "Result TitleDescription"
+[lst6]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/TitleDescriptionChevron.PNG "Result TitleDescriptionChevron"
+[lst7]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/IconText.PNG "Result IconText"
+[lst8]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/IconTextChevron.PNG "Result IconTextChevron"
+[lst9]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/IconTitle.PNG "Result IconTitle"
+[lst10]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/IconTitleDescription.PNG "Result IconTitleDescription"
+[lst11]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/IconTitleDescriptionChevron.PNG "Result IconTitleDescriptionChevron"
+[lst12]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/IndexText.PNG "Result IndexText"
+[lst13]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/IndexTextChevron.PNG "Result IndexTextChevron"
+[lst14]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/IndexTitle.PNG "Result IndexTitle"
+[lst15]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/IndexTitleDescription.PNG "Result IndexTitleDescription"
+[lst16]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/IndexTitleDescriptionChevron.PNG "Result IndexTitleDescriptionChevron"
+[lst17]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/TextIcon.PNG "Result TextIcon"
+[lst18]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/TitleIcon.PNG "Result TitleIcon"
+[lst19]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/TitleDescriptionIcon.PNG "Result TitleDescriptionIcon"
 
 ## Zebble.Widgets
 
@@ -167,4 +185,26 @@ public class MyPage : Page
 
 #### ListItem & ListCard
 
+<b>ListItem</b> and <b>ListCard</b> make you able to design your list items easily and both work the same but the <b>ListItem</b> has a divider line below each row and the <b>ListCard</b> shows each row as a card.
 
+| ItemType     | Example         | Result    |
+| :----------- | :-----------    | :-------- |
+|Text| ``` <ListItem Type="@ListTypes.Text" Text.Text="SampleText" />  ``` | ![lst1] |
+|TextChevron| ``` <ListItem Type="@ListTypes.TextChevron" Text.Text="SampleText" />  ``` | ![lst2] |
+|Title| ``` <ListItem Type="@ListTypes.Title" Title.Text="SampleTitle" />  ``` | ![lst3] |
+|TitleChevron| ``` <ListItem Type="@ListTypes.TitleChevron" Title.Text="SampleTitle" />  ``` | ![lst4] |
+|TitleDescription| ``` <ListItem Type="@ListTypes.TitleDescription" Title.Text="SampleTitle" Description.Text="SampleDescription" />  ``` | ![lst5] |
+|TitleDescriptionChevron| ``` <ListItem Type="@ListTypes.TitleDescriptionChevron" Title.Text="SampleTitle" Description.Text="SampleDescription"  />  ``` | ![lst6] |
+|IconText| ``` <ListItem Type="@ListTypes.IconText" Text.Text="SampleText" Icon.Path="images/icon.png" />  ``` | ![lst7] |
+|IconTextChevron| ``` <ListItem Type="@ListTypes.IconTextChevron" Text.Text="SampleText" Icon.Path="images/icon.png" />  ``` | ![lst8] |
+|IconTitle| ``` <ListItem Type="@ListTypes.IconTitle" Title.Text="SampleTitle" Icon.Path="images/icon.png" />  ``` | ![lst9] |
+|IconTitleDescription| ``` <ListItem Type="@ListTypes.IconTitleDescriptionChevron" Title.Text="SampleTitle" Icon.Path="images/icon.png" Description.Text="SampleDescription" />  ``` | ![lst10] |
+|IconTitleDescriptionChevron| ``` <ListItem Type="@ListTypes.IconTitleDescription" Title.Text="SampleTitle" Icon.Path="images/icon.png" Description.Text="SampleDescription" />  ``` | ![lst11] |
+|IndexText| ``` <ListItem Type="@ListTypes.IndexText" Text.Text="SampleText" Index.Text="1" />  ``` | ![lst12] |
+|IndexTextChevron| ``` <ListItem Type="@ListTypes.IndexTextChevron" Text.Text="SampleText" Index.Text="1" />  ``` | ![lst13] |
+|IndexTitle| ``` <ListItem Type="@ListTypes.IndexTitle" Title.Text="SampleTitle" Index.Text="1" />  ``` | ![lst14] |
+|IndexTitleDescription| ``` <ListItem Type="@ListTypes.IndexTitleDescription" Title.Text="SampleTitle" Index.Text="1" Description.Text="SampleDescription" />  ``` | ![lst15] |
+|IndexTitleDescriptionChevron| ``` <ListItem Type="@ListTypes.IndexTitleDescriptionChevron" Title.Text="SampleTitle" Index.Text="1" Description.Text="SampleDescription" />  ``` | ![lst16] |
+|TextIcon| ``` <ListItem Type="@ListTypes.TextIcon" Text.Text="SampleText" Icon.Path="images/icon.png" />  ``` | ![lst17] |
+|TitleIcon| ``` <ListItem Type="@ListTypes.TitleIcon" Title.Text="SampleTitle" Icon.Path="images/icon.png" />  ``` | ![lst18] |
+|TitleDescriptionIcon| ``` <ListItem Type="@ListTypes.TitleDescriptionIcon" Title.Text="SampleTitle" Icon.Path="images/icon.png" Description.Text="SampleDescription" />  ``` | ![lst19] |

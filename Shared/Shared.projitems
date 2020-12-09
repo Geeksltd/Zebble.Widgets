@@ -14,12 +14,15 @@
     <None Include="$(MSBuildThisFileDirectory)NuGet\NuGet.nuspec" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)BaseListItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Center.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ContentFrame.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CloseButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Buttons.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Links.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListCard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Row.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SafeArea.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Shadow.cs" />
