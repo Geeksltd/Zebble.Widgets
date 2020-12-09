@@ -1,7 +1,7 @@
 ﻿using Zebble;
 using System;
 
-namespace UI.Templates
+namespace Zebble
 {
     public class TopUnsafeAreaFiller : Canvas
     {
