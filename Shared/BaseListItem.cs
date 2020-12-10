@@ -12,255 +12,101 @@ namespace Zebble
 
     public abstract class BaseListItem : Stack
     {
-        readonly Row HorizontalRow = new Row { CssClass = "horizontal-row" };
-        readonly Stack VerticalRow = new Stack { CssClass = "vertical-row" };
-
-        public readonly TextView Text = new TextView { CssClass = "list-text" };
-        public readonly TextView Title = new TextView { CssClass = "list-title" };
-        public readonly TextView Description = new TextView { CssClass = "list-description" };
-        public readonly TextView Chevron = new TextView(">") { CssClass = "list-chevron" };
-        public readonly TextView Index = new TextView() { CssClass = "list-index" };
-        public readonly ImageView Icon = new ImageView() { CssClass = "list-icon" };
+        readonly Bindable<string> TextBinding = new Bindable<string>();
+        readonly Bindable<string> IconBinding = new Bindable<string>();
+        readonly Bindable<string> ChevronBinding = new Bindable<string>(">");
+        readonly Bindable<string> TitleBinding = new Bindable<string>();
+        readonly Bindable<string> IndexBinding = new Bindable<string>();
+        readonly Bindable<string> DescriptionBinding = new Bindable<string>();
 
         public ListTypes Type { get; set; }
+        public string Text
+        {
+            get => TextBinding.Value;
+            set
+            {
+                if (value == TextBinding.Value) return;
+                TextBinding.Set(value);
+            }
+        }
+        public string Title
+        {
+            get => TitleBinding.Value;
+            set
+            {
+                if (value == TitleBinding.Value) return;
+                TitleBinding.Set(value);
+            }
+        }
+        public string Icon
+        {
+            get => IconBinding.Value;
+            set
+            {
+                if (value == IconBinding.Value) return;
+                IconBinding.Set(value);
+            }
+        }
+        public string Chevron
+        {
+            get => ChevronBinding.Value;
+            set
+            {
+                if (value == ChevronBinding.Value) return;
+                ChevronBinding.Set(value);
+            }
+        }
+        public string Description
+        {
+            get => DescriptionBinding.Value;
+            set
+            {
+                if (value == DescriptionBinding.Value) return;
+                DescriptionBinding.Set(value);
+            }
+        }
+        public string Index
+        {
+            get => IndexBinding.Value;
+            set
+            {
+                if (value == IndexBinding.Value) return;
+                IndexBinding.Set(value);
+            }
+        }
 
         public override async Task OnPreRender()
         {
             await base.OnPreRender();
-
-            Title.Css.Font(size: 17, bold: true);
-            Description.Css.Font(size: 10);
-            Chevron.Css.Font(size: 14).TextAlignment(Alignment.Middle).Padding(top: 10, bottom: 10);
-            Index.Css.Font(size: 17).TextAlignment(Alignment.Middle).Padding(top: 10, bottom: 10);
-            Icon.Css.Size(60);
-
-            await Add(HorizontalRow);
-            await RenderType();
+            await RenderTypes();
         }
 
-        Task RenderType()
+        Task RenderTypes()
         {
             switch (Type)
             {
-                case ListTypes.Text: return JustText();
-                case ListTypes.TextChevron: return TextChevron();
-                case ListTypes.Title: return JustTitle();
-                case ListTypes.TitleChevron: return TitleChevron();
-                case ListTypes.TitleDescription: return TitleDescription();
-                case ListTypes.TitleDescriptionChevron: return TitleDescriptionChevron();
-                case ListTypes.IconText: return IconText();
-                case ListTypes.IconTextChevron: return IconTextChevron();
-                case ListTypes.IconTitle: return IconTitle();
-                case ListTypes.IconTitleDescription: return IconTitleDescription();
-                case ListTypes.IconTitleDescriptionChevron: return IconTitleDescriptionChevron();
-                case ListTypes.IndexText: return IndexText();
-                case ListTypes.IndexTextChevron: return IndexTextChevron();
-                case ListTypes.IndexTitle: return IndexTitle();
-                case ListTypes.IndexTitleDescription: return IndexTitleDescription();
-                case ListTypes.IndexTitleDescriptionChevron: return IndexTitleDescriptionChevron();
-                case ListTypes.TextIcon: return TextIcon();
-                case ListTypes.TitleIcon: return TitleIcon();
-                case ListTypes.TitleDescriptionIcon: return TitleDescriptionIcon();
+                case ListTypes.Text: return Add(new Widgets.Text(TextBinding));
+                case ListTypes.TextChevron: return Add(new Widgets.TextChevron(TextBinding, ChevronBinding));
+                case ListTypes.Title: return Add(new Widgets.Title(TitleBinding));
+                case ListTypes.TitleChevron: return Add(new Widgets.TitleChevron(TitleBinding, ChevronBinding));
+                case ListTypes.TitleDescription: return Add(new Widgets.TitleDescription(TitleBinding, DescriptionBinding));
+                case ListTypes.TitleDescriptionChevron: return Add(new Widgets.TitleDescriptionChevron(TitleBinding, DescriptionBinding, ChevronBinding));
+                case ListTypes.IconText: return Add(new Widgets.IconText(IconBinding, TextBinding));
+                case ListTypes.IconTextChevron: return Add(new Widgets.IconTextChevron(IconBinding, TextBinding, ChevronBinding));
+                case ListTypes.IconTitle: return Add(new Widgets.IconTitle(IconBinding, TitleBinding));
+                case ListTypes.IconTitleDescription: return Add(new Widgets.IconTitleDescription(IconBinding, TitleBinding, DescriptionBinding));
+                case ListTypes.IconTitleDescriptionChevron: return Add(new Widgets.IconTitleDescriptionChevron(IconBinding, TitleBinding, DescriptionBinding, ChevronBinding));
+                case ListTypes.IndexText: return Add(new Widgets.IndexText(IndexBinding, TextBinding));
+                case ListTypes.IndexTextChevron: return Add(new Widgets.IndexTextChevron(IndexBinding, TextBinding, ChevronBinding));
+                case ListTypes.IndexTitle: return Add(new Widgets.IndexTitle(IndexBinding, TitleBinding));
+                case ListTypes.IndexTitleDescription: return Add(new Widgets.IndexTitleDescription(IndexBinding, TitleBinding, DescriptionBinding));
+                case ListTypes.IndexTitleDescriptionChevron: return Add(new Widgets.IndexTitleDescriptionChevron(IndexBinding, TitleBinding, DescriptionBinding, ChevronBinding));
+                case ListTypes.TextIcon: return Add(new Widgets.TextIcon(TextBinding, IconBinding));
+                case ListTypes.TitleIcon: return Add(new Widgets.TitleIcon(TitleBinding, IconBinding));
+                case ListTypes.TitleDescriptionIcon: return Add(new Widgets.TitleDescriptionIcon(TitleBinding, DescriptionBinding, IconBinding));
             }
 
             return Task.CompletedTask;
-        }
-
-        async Task JustText()
-        {
-            Text.Css.Padding(all: 15);
-
-            await HorizontalRow.Add(Text);
-        }
-
-        async Task TextChevron()
-        {
-            Text.Css.Padding(all: 15).Width(95.Percent());
-            Chevron.Css.Height(new Length.BindingLengthRequest(Text.Height));
-
-            await HorizontalRow.Add(Text);
-            await HorizontalRow.Add(Chevron);
-        }
-
-        async Task JustTitle()
-        {
-            Title.Css.Padding(all: 15);
-
-            await HorizontalRow.Add(Title);
-        }
-
-        async Task TitleChevron()
-        {
-            Title.Css.Padding(all: 15).Width(95.Percent());
-            Chevron.Css.Height(new Length.BindingLengthRequest(Title.Height));
-
-            await HorizontalRow.Add(Title);
-            await HorizontalRow.Add(Chevron);
-        }
-
-        async Task TitleDescription()
-        {
-            Title.Css.Padding(left: 15, right: 15, top: 15, bottom: 0);
-            Description.Css.Padding(left: 15, right: 15, top: 0, bottom: 15);
-
-            await VerticalRow.Add(Title);
-            await VerticalRow.Add(Description);
-
-            await HorizontalRow.Add(VerticalRow);
-        }
-
-        async Task TitleDescriptionChevron()
-        {
-            Title.Css.Padding(left: 15, right: 15, top: 15, bottom: 0);
-            Description.Css.Padding(left: 15, right: 15, top: 0, bottom: 15);
-            VerticalRow.Css.Width(95.Percent());
-            Chevron.Css.Height(new Length.BindingLengthRequest(VerticalRow.Height));
-
-            await VerticalRow.Add(Title);
-            await VerticalRow.Add(Description);
-
-            await HorizontalRow.Add(VerticalRow);
-            await HorizontalRow.Add(Chevron);
-        }
-
-        async Task IconText()
-        {
-            Icon.Css.Width(17.Percent()).Margin(top: 15, left: 15, bottom: 15);
-            Text.Css.Padding(all: 15).Margin(top: 15).Width(75.Percent()).Height(new Length.BindingLengthRequest(Icon.Height));
-
-            await HorizontalRow.Add(Icon);
-            await HorizontalRow.Add(Text);
-        }
-
-        async Task IconTextChevron()
-        {
-            Icon.Css.Width(17.Percent()).Margin(top: 15, left: 15, bottom: 15);
-            Text.Css.Padding(all: 15).Margin(top: 15).Width(70.Percent()).Height(new Length.BindingLengthRequest(Icon.Height));
-            Chevron.Css.Margin(top: 15).Height(new Length.BindingLengthRequest(Icon.Height));
-
-            await HorizontalRow.Add(Icon);
-            await HorizontalRow.Add(Text);
-            await HorizontalRow.Add(Chevron);
-        }
-
-        async Task IconTitle()
-        {
-            Icon.Css.Width(17.Percent()).Margin(top: 15, left: 15, bottom: 15);
-            Title.Css.Padding(all: 15).Margin(top: 15).Width(70.Percent()).Height(new Length.BindingLengthRequest(Icon.Height));
-
-            await HorizontalRow.Add(Icon);
-            await HorizontalRow.Add(Title);
-        }
-
-        async Task IconTitleDescription()
-        {
-            Icon.Css.Width(17.Percent()).Margin(top: 15, left: 15, bottom: 15);
-            VerticalRow.Css.Padding(left: 15, bottom: 15).Margin(top: 15).Width(75.Percent()).Height(new Length.BindingLengthRequest(Icon.Height));
-
-            await VerticalRow.Add(Title);
-            await VerticalRow.Add(Description);
-
-            await HorizontalRow.Add(Icon);
-            await HorizontalRow.Add(VerticalRow);
-        }
-
-        async Task IconTitleDescriptionChevron()
-        {
-            Icon.Css.Width(17.Percent()).Margin(top: 15, left: 15, bottom: 15);
-            VerticalRow.Css.Padding(left: 15, bottom: 15).Margin(top: 15).Width(70.Percent()).Height(new Length.BindingLengthRequest(Icon.Height)); ;
-            Chevron.Css.Margin(top: 15).Height(new Length.BindingLengthRequest(Icon.Height));
-
-            await VerticalRow.Add(Title);
-            await VerticalRow.Add(Description);
-
-            await HorizontalRow.Add(Icon);
-            await HorizontalRow.Add(VerticalRow);
-            await HorizontalRow.Add(Chevron);
-        }
-
-        async Task IndexText()
-        {
-            Index.Css.Width(10.Percent()).Height(new Length.BindingLengthRequest(Text.Height));
-            Text.Css.Padding(all: 15).Width(85.Percent());
-
-            await HorizontalRow.Add(Index);
-            await HorizontalRow.Add(Text);
-        }
-
-        async Task IndexTextChevron()
-        {
-            Index.Css.Width(10.Percent()).Height(new Length.BindingLengthRequest(Text.Height));
-            Text.Css.Padding(all: 15).Width(80.Percent());
-            Chevron.Css.Height(new Length.BindingLengthRequest(Text.Height));
-
-            await HorizontalRow.Add(Index);
-            await HorizontalRow.Add(Text);
-            await HorizontalRow.Add(Chevron);
-        }
-
-        async Task IndexTitle()
-        {
-            Index.Css.Width(10.Percent()).Height(new Length.BindingLengthRequest(Title.Height));
-            Title.Css.Padding(all: 15).Width(85.Percent());
-
-            await HorizontalRow.Add(Index);
-            await HorizontalRow.Add(Title);
-        }
-
-        async Task IndexTitleDescription()
-        {
-            Index.Css.Width(10.Percent()).Height(new Length.BindingLengthRequest(VerticalRow.Height));
-            VerticalRow.Css.Padding(all: 10).Width(85.Percent());
-
-            await VerticalRow.Add(Title);
-            await VerticalRow.Add(Description);
-
-            await HorizontalRow.Add(Index);
-            await HorizontalRow.Add(VerticalRow);
-        }
-
-        async Task IndexTitleDescriptionChevron()
-        {
-            Index.Css.Width(10.Percent()).Height(new Length.BindingLengthRequest(VerticalRow.Height));
-            VerticalRow.Css.Padding(all: 10).Width(80.Percent());
-            Chevron.Css.Height(new Length.BindingLengthRequest(VerticalRow.Height));
-
-            await VerticalRow.Add(Title);
-            await VerticalRow.Add(Description);
-
-            await HorizontalRow.Add(Index);
-            await HorizontalRow.Add(VerticalRow);
-            await HorizontalRow.Add(Chevron);
-        }
-
-        async Task TextIcon()
-        {
-            Icon.Css.Width(8.Percent()).Height(30).Margin(top: 15, left: 15, bottom: 15);
-            Text.Css.Padding(all: 15).Width(88.Percent()).Height(new Length.BindingLengthRequest(HorizontalRow.Height));
-
-            await HorizontalRow.Add(Text);
-            await HorizontalRow.Add(Icon);
-        }
-
-        async Task TitleIcon()
-        {
-            Icon.Css.Width(8.Percent()).Height(30).Margin(top: 15, left: 15, bottom: 15);
-            Title.Css.Padding(all: 15).Width(88.Percent()).Height(new Length.BindingLengthRequest(HorizontalRow.Height));
-
-            await HorizontalRow.Add(Title);
-            await HorizontalRow.Add(Icon);
-        }
-
-        async Task TitleDescriptionIcon()
-        {
-            Icon.Css.Width(8.Percent()).Height(30).Margin(top: 15, left: 15, bottom: 15);
-            VerticalRow.Css.Padding(left: 15, top: 10, bottom: 15).Height(new Length.BindingLengthRequest(HorizontalRow.Height));
-
-            await VerticalRow.Add(Title);
-            await VerticalRow.Add(Description);
-
-            await HorizontalRow.Add(VerticalRow);
-            await HorizontalRow.Add(Icon);
         }
     }
 }
