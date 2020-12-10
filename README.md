@@ -159,52 +159,28 @@ This element is a button with a Link style ([implementation](/Shared/Links.cs)).
 
 ---
 
-### SafeArea
-
-The purpose of SafeArea is to render content within the safe area boundaries of a device ([implementation](/Shared/SafeArea.cs)).
-
-```csharp
-public class MyPage : Page
-{
-    public SafeArea SafeAreaContainer = new SafeArea();
-    public ScrollView BodyScroller = new ScrollView().Id("BodyScroller");
-    public Stack Body;
-
-    protected override async Task InitializeFromMarkup()
-    {
-        await base.InitializeFromMarkup();
-
-        await Add(SafeAreaContainer);
-        await SafeAreaContainer.Add(BodyScroller);
-        await BodyScroller.Add(Body = new Stack().Id("Body"));
-    }
-}
-```
-
----
-
 #### ListItem & ListCard
 
 <b>ListItem</b> and <b>ListCard</b> make you able to design your list items easily and both work the same but the <b>ListItem</b> has a divider line below each row and the <b>ListCard</b> shows each row as a card.
 
 | ItemType     | Example         | Result    |
 | :----------- | :-----------    | :-------- |
-|Text| ``` <ListItem Type="@ListTypes.Text" Text="SampleText" />  ``` | ![lst1] |
-|TextChevron| ``` <ListItem Type="@ListTypes.TextChevron" Text="SampleText" />  ``` | ![lst2] |
-|Title| ``` <ListItem Type="@ListTypes.Title" Title="SampleTitle" />  ``` | ![lst3] |
-|TitleChevron| ``` <ListItem Type="@ListTypes.TitleChevron" Title="SampleTitle" />  ``` | ![lst4] |
-|TitleDescription| ``` <ListItem Type="@ListTypes.TitleDescription" Title="SampleTitle" Description="SampleDescription" />  ``` | ![lst5] |
-|TitleDescriptionChevron| ``` <ListItem Type="@ListTypes.TitleDescriptionChevron" Title="SampleTitle" Description="SampleDescription"  />  ``` | ![lst6] |
-|IconText| ``` <ListItem Type="@ListTypes.IconText" Text="SampleText" Icon="images/icon.png" />  ``` | ![lst7] |
-|IconTextChevron| ``` <ListItem Type="@ListTypes.IconTextChevron" Text="SampleText" Icon="images/icon.png" />  ``` | ![lst8] |
-|IconTitle| ``` <ListItem Type="@ListTypes.IconTitle" Title="SampleTitle" Icon="images/icon.png" />  ``` | ![lst9] |
-|IconTitleDescription| ``` <ListItem Type="@ListTypes.IconTitleDescriptionChevron" Title="SampleTitle" Icon="images/icon.png" Description="SampleDescription" />  ``` | ![lst10] |
-|IconTitleDescriptionChevron| ``` <ListItem Type="@ListTypes.IconTitleDescription" Title="SampleTitle" Icon="images/icon.png" Description="SampleDescription" />  ``` | ![lst11] |
-|IndexText| ``` <ListItem Type="@ListTypes.IndexText" Text="SampleText" Index="1" />  ``` | ![lst12] |
-|IndexTextChevron| ``` <ListItem Type="@ListTypes.IndexTextChevron" Text="SampleText" Index="1" />  ``` | ![lst13] |
-|IndexTitle| ``` <ListItem Type="@ListTypes.IndexTitle" Title="SampleTitle" Index="1" />  ``` | ![lst14] |
-|IndexTitleDescription| ``` <ListItem Type="@ListTypes.IndexTitleDescription" Title="SampleTitle" Index="1" Description="SampleDescription" />  ``` | ![lst15] |
-|IndexTitleDescriptionChevron| ``` <ListItem Type="@ListTypes.IndexTitleDescriptionChevron" Title="SampleTitle" Index="1" Description="SampleDescription" />  ``` | ![lst16] |
-|TextIcon| ``` <ListItem Type="@ListTypes.TextIcon" Text="SampleText" Icon="images/icon.png" />  ``` | ![lst17] |
-|TitleIcon| ``` <ListItem Type="@ListTypes.TitleIcon" Title="SampleTitle" Icon="images/icon.png" />  ``` | ![lst18] |
-|TitleDescriptionIcon| ``` <ListItem Type="@ListTypes.TitleDescriptionIcon" Title="SampleTitle" Icon="images/icon.png" Description="SampleDescription" />  ``` | ![lst19] |
+|Text| ``` <ListItem><Text TextItem.Text="SampleText" /></ListItem> ``` | ![lst1] |
+|TextChevron| ``` <ListItem><TextChevron Text.Text="SampleText" /></ListItem> ``` | ![lst2] |
+|Title| ``` <ListItem><Title TitleItem.Text="SampleTitle" /></ListItem> ``` | ![lst3] |
+|TitleChevron| ``` <ListItem><TitleChevron Title.Text="SampleTitle" /></ListItem> ``` | ![lst4] |
+|TitleDescription| ``` <ListItem><TitleDescription Title.Text="SampleTitle" Description.Text="Some Description"  /></ListItem> ``` | ![lst5] |
+|TitleDescriptionChevron| ``` <ListItem><TitleDescriptionChevron Title.Text="SampleTitle" Description.Text="Some Description"  /></ListItem> ``` | ![lst6] |
+|IconText| ``` <ListItem><IconText Text.Text="SampleText" Icon.Path="images/icon.png"  /></ListItem> ``` | ![lst7] |
+|IconTextChevron| ``` <ListItem><IconTextChevron Text.Text="SampleText" Icon.Path="images/icon.png"  /></ListItem> ``` | ![lst8] |
+|IconTitle| ``` <ListItem><IconTitle Title.Text="SampleTitle" Icon.Path="images/icon.png" /></ListItem> ``` | ![lst9] |
+|IconTitleDescription| ``` <ListItem><IconTitleDescription Title.Text="SampleTitle" Icon.Path="images/icon.png" Description.Text="Some Description" /></ListItem> ``` | ![lst10] |
+|IconTitleDescriptionChevron| ``` <ListItem><IconTitleDescriptionChevron Title.Text="SampleTitle" Icon.Path="images/icon.png" Description.Text="Some Description" /></ListItem> ``` | ![lst11] |
+|IndexText| ``` <ListItem><IndexText Index.Text="0" Text.Text="SampleText" /></ListItem> ``` | ![lst12] |
+|IndexTextChevron| ``` <ListItem><IndexTextChevron Index.Text="0" Text.Text="SampleText"  /></ListItem> ``` | ![lst13] |
+|IndexTitle| ``` <ListItem><IndexTitle Index.Text="0" Title.Text="SampleTitle"  /></ListItem> ``` | ![lst14] |
+|IndexTitleDescription| ``` <ListItem><IndexTitleDescription Index.Text="0" Title.Text="SampleTitle" Description.Text="Some Description"  /></ListItem> ``` | ![lst15] |
+|IndexTitleDescriptionChevron| ``` <ListItem><IndexTitleDescriptionChevron Index.Text="0" Title.Text="SampleTitle"  Description.Text="Some Description"  /></ListItem> ``` | ![lst16] |
+|TextIcon| ``` <ListItem><TextIcon Text.Text="SampleText" Icon.Path="images/icon.png" /></ListItem> ``` | ![lst17] |
+|TitleIcon| ``` <ListItem><TitleIcon Title.Text="SampleTitle" Icon.Path="images/icon.png" /></ListItem> ``` | ![lst18] |
+|TitleDescriptionIcon| ``` <ListItem><TitleDescriptionIcon Title.Text="SampleTitle" Icon.Path="images/icon.png" Description.Text="Some Description"  /></ListItem> ``` | ![lst19] |

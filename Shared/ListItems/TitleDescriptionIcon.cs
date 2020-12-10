@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Zebble.Widgets
+namespace Zebble
 {
     public class TitleDescriptionIcon : Row
     {

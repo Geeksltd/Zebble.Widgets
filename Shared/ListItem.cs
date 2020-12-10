@@ -2,7 +2,7 @@
 
 namespace Zebble
 {
-    public class ListItem : BaseListItem
+    public class ListItem : Stack
     {
         public override async Task OnInitializing()
         {

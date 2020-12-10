@@ -14,7 +14,6 @@
     <None Include="$(MSBuildThisFileDirectory)NuGet\NuGet.nuspec" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)BaseListItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Center.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ContentFrame.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CloseButton.cs" />
