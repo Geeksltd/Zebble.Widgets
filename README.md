@@ -165,22 +165,22 @@ This element is a button with a Link style ([implementation](/Shared/Links.cs)).
 
 | ItemType     | Example         | Result    |
 | :----------- | :-----------    | :-------- |
-|Text| ``` <ListItem><Text TextItem.Text="SampleText" /></ListItem> ``` | ![lst1] |
-|TextChevron| ``` <ListItem><TextChevron Text.Text="SampleText" /></ListItem> ``` | ![lst2] |
-|Title| ``` <ListItem><Title TitleItem.Text="SampleTitle" /></ListItem> ``` | ![lst3] |
-|TitleChevron| ``` <ListItem><TitleChevron Title.Text="SampleTitle" /></ListItem> ``` | ![lst4] |
-|TitleDescription| ``` <ListItem><TitleDescription Title.Text="SampleTitle" Description.Text="Some Description"  /></ListItem> ``` | ![lst5] |
-|TitleDescriptionChevron| ``` <ListItem><TitleDescriptionChevron Title.Text="SampleTitle" Description.Text="Some Description"  /></ListItem> ``` | ![lst6] |
-|IconText| ``` <ListItem><IconText Text.Text="SampleText" Icon.Path="images/icon.png"  /></ListItem> ``` | ![lst7] |
-|IconTextChevron| ``` <ListItem><IconTextChevron Text.Text="SampleText" Icon.Path="images/icon.png"  /></ListItem> ``` | ![lst8] |
-|IconTitle| ``` <ListItem><IconTitle Title.Text="SampleTitle" Icon.Path="images/icon.png" /></ListItem> ``` | ![lst9] |
-|IconTitleDescription| ``` <ListItem><IconTitleDescription Title.Text="SampleTitle" Icon.Path="images/icon.png" Description.Text="Some Description" /></ListItem> ``` | ![lst10] |
-|IconTitleDescriptionChevron| ``` <ListItem><IconTitleDescriptionChevron Title.Text="SampleTitle" Icon.Path="images/icon.png" Description.Text="Some Description" /></ListItem> ``` | ![lst11] |
-|IndexText| ``` <ListItem><IndexText Index.Text="0" Text.Text="SampleText" /></ListItem> ``` | ![lst12] |
-|IndexTextChevron| ``` <ListItem><IndexTextChevron Index.Text="0" Text.Text="SampleText"  /></ListItem> ``` | ![lst13] |
-|IndexTitle| ``` <ListItem><IndexTitle Index.Text="0" Title.Text="SampleTitle"  /></ListItem> ``` | ![lst14] |
-|IndexTitleDescription| ``` <ListItem><IndexTitleDescription Index.Text="0" Title.Text="SampleTitle" Description.Text="Some Description"  /></ListItem> ``` | ![lst15] |
-|IndexTitleDescriptionChevron| ``` <ListItem><IndexTitleDescriptionChevron Index.Text="0" Title.Text="SampleTitle"  Description.Text="Some Description"  /></ListItem> ``` | ![lst16] |
-|TextIcon| ``` <ListItem><TextIcon Text.Text="SampleText" Icon.Path="images/icon.png" /></ListItem> ``` | ![lst17] |
-|TitleIcon| ``` <ListItem><TitleIcon Title.Text="SampleTitle" Icon.Path="images/icon.png" /></ListItem> ``` | ![lst18] |
-|TitleDescriptionIcon| ``` <ListItem><TitleDescriptionIcon Title.Text="SampleTitle" Icon.Path="images/icon.png" Description.Text="Some Description"  /></ListItem> ``` | ![lst19] |
+|Text ([implementation](/Shared/ListItems/Text.cs))| ``` <ListItem><Text TextItem.Text="SampleText" /></ListItem> ``` | ![lst1] |
+|TextChevron ([implementation](/Shared/ListItems/TextChevron.cs))| ``` <ListItem><TextChevron Text.Text="SampleText" /></ListItem> ``` | ![lst2] |
+|Title ([implementation](/Shared/ListItems/Title.cs))| ``` <ListItem><Title TitleItem.Text="SampleTitle" /></ListItem> ``` | ![lst3] |
+|TitleChevron ([implementation](/Shared/ListItems/TitleChevron.cs))| ``` <ListItem><TitleChevron Title.Text="SampleTitle" /></ListItem> ``` | ![lst4] |
+|TitleDescription ([implementation](/Shared/ListItems/TitleDescription.cs))| ``` <ListItem><TitleDescription Title.Text="SampleTitle" Description.Text="Some Description"  /></ListItem> ``` | ![lst5] |
+|TitleDescriptionChevron ([implementation](/Shared/ListItems/TitleDescriptionChevron.cs))| ``` <ListItem><TitleDescriptionChevron Title.Text="SampleTitle" Description.Text="Some Description"  /></ListItem> ``` | ![lst6] |
+|IconText ([implementation](/Shared/ListItems/IconText.cs))| ``` <ListItem><IconText Text.Text="SampleText" Icon.Path="images/icon.png"  /></ListItem> ``` | ![lst7] |
+|IconTextChevron ([implementation](/Shared/ListItems/IconTextChevron.cs))| ``` <ListItem><IconTextChevron Text.Text="SampleText" Icon.Path="images/icon.png"  /></ListItem> ``` | ![lst8] |
+|IconTitle ([implementation](/Shared/ListItems/IconTitle.cs))| ``` <ListItem><IconTitle Title.Text="SampleTitle" Icon.Path="images/icon.png" /></ListItem> ``` | ![lst9] |
+|IconTitleDescription ([implementation](/Shared/ListItems/IconTitleDescription.cs))| ``` <ListItem><IconTitleDescription Title.Text="SampleTitle" Icon.Path="images/icon.png" Description.Text="Some Description" /></ListItem> ``` | ![lst10] |
+|IconTitleDescriptionChevron ([implementation](/Shared/ListItems/IconTitleDescriptionChevron.cs))| ``` <ListItem><IconTitleDescriptionChevron Title.Text="SampleTitle" Icon.Path="images/icon.png" Description.Text="Some Description" /></ListItem> ``` | ![lst11] |
+|IndexText ([implementation](/Shared/ListItems/IndexText.cs))| ``` <ListItem><IndexText Index.Text="0" Text.Text="SampleText" /></ListItem> ``` | ![lst12] |
+|IndexTextChevron ([implementation](/Shared/ListItems/IndexTextChevron.cs))| ``` <ListItem><IndexTextChevron Index.Text="0" Text.Text="SampleText"  /></ListItem> ``` | ![lst13] |
+|IndexTitle ([implementation](/Shared/ListItems/IndexTitle.cs))| ``` <ListItem><IndexTitle Index.Text="0" Title.Text="SampleTitle"  /></ListItem> ``` | ![lst14] |
+|IndexTitleDescription ([implementation](/Shared/ListItems/IndexTitleDescription.cs))| ``` <ListItem><IndexTitleDescription Index.Text="0" Title.Text="SampleTitle" Description.Text="Some Description"  /></ListItem> ``` | ![lst15] |
+|IndexTitleDescriptionChevron ([implementation](/Shared/ListItems/IndexTitleDescriptionChevron.cs))| ``` <ListItem><IndexTitleDescriptionChevron Index.Text="0" Title.Text="SampleTitle"  Description.Text="Some Description"  /></ListItem> ``` | ![lst16] |
+|TextIcon ([implementation](/Shared/ListItems/TextIcon.cs))| ``` <ListItem><TextIcon Text.Text="SampleText" Icon.Path="images/icon.png" /></ListItem> ``` | ![lst17] |
+|TitleIcon ([implementation](/Shared/ListItems/TitleIcon.cs))| ``` <ListItem><TitleIcon Title.Text="SampleTitle" Icon.Path="images/icon.png" /></ListItem> ``` | ![lst18] |
+|TitleDescriptionIcon ([implementation](/Shared/ListItems/TitleDescriptionIcon.cs))| ``` <ListItem><TitleDescriptionIcon Title.Text="SampleTitle" Icon.Path="images/icon.png" Description.Text="Some Description"  /></ListItem> ``` | ![lst19] |
