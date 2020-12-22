@@ -1,33 +1,21 @@
-﻿using Zebble;
-using System;
-
-namespace Zebble
+﻿namespace Zebble
 {
     public class TopUnsafeAreaFiller : Canvas
     {
         public TopUnsafeAreaFiller()
         {
-            Css.Padding(top: GetValue());
-        }
-
-        float GetValue()
-        {
-            var result = Zebble.Device.Screen.SafeAreaInsets.Top;
-
+            var top = Device.Screen.SafeAreaInsets.Top;
 #if UWP
-            if (System.Diagnostics.Debugger.IsAttached)
-                result = result.LimitMin(30f);
+            if (System.Diagnostics.Debugger.IsAttached && top < 30f)
+                top = 30f;
 #endif
 
-            return result;
+            Css.Height(top);
         }
     }
 
     public class BottomUnsafeAreaFiller : Canvas
     {
-        public BottomUnsafeAreaFiller()
-        {
-            Css.Padding(bottom: Zebble.Device.Screen.SafeAreaInsets.Bottom);
-        }
+        public BottomUnsafeAreaFiller() => Css.Height(Device.Screen.SafeAreaInsets.Bottom);
     }
 }
