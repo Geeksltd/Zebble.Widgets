@@ -1,4 +1,4 @@
-[logo]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/NuGet/Icon.png "Zebble.Widgets"
+﻿[logo]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/icon.png "Zebble.Widgets"
 [row]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/Row.PNG "Row ScreenShot"
 [center]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/Center.PNG "Center ScreenShot"
 [closeicon]: https://raw.githubusercontent.com/Geeksltd/Zebble.Widgets/master/Shared/Screenshots/Row.PNG "CloseIcon ScreenShot"
