@@ -7,7 +7,7 @@
     <RootNamespace>Zebble</RootNamespace>
     <PackageId>Zebble.Widgets</PackageId>
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
-    <Version>1.1.113.0</Version>
+    <Version>1.1.114.0</Version>
     <PackOnBuild>true</PackOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
     <LangVersion>default</LangVersion>
@@ -66,8 +66,7 @@
     <None Remove="Zebble-LicenseAgreement.txt" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Zebble" Version="4.5.444" />
-    <PackageReference Include="Zebble.BoxShadow" Version="1.2.145" />
+    <PackageReference Include="Zebble.BoxShadow" Version="1.2.146" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Android\" />
