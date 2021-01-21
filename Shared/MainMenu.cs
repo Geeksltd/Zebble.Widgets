@@ -17,7 +17,8 @@ namespace Zebble
             Swiped.FullEvent += a => { if (a.Direction == Zebble.Direction.Left) Collapse(); };
             Nav.HardwareBack.FullEvent += x => { if (IsExpanded) { Collapse(); x.Cancel = true; } };
 
-            Css.Width(75.Percent()).Height(100.Percent()).Padding(20).X(-Root.ActualWidth * 0.75f);
+            Css.Width(75.Percent()).Height(100.Percent()).Padding(20);
+            X.BindTo(Width, w => -w);
         }
 
         public static async Task Setup<TMenu>() where TMenu : MainMenu, new()

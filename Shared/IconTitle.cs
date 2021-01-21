@@ -24,7 +24,12 @@ namespace Zebble
             Title.Css.Font(size: 17, bold: true);
 
             Icon.Css.Width(17.Percent()).Margin(top: 15, left: 15, bottom: 15);
-            Title.Css.Padding(all: 15).Margin(top: 15).Width(70.Percent()).Height(new Length.BindingLengthRequest(Icon.Height));
+
+            Title.Css
+                .Padding(all: 15)
+                .Margin(top: 15)
+                .Width(70.Percent())
+                .Height(new Length.BindingLengthRequest(Icon.Height));
 
             await Add(Icon);
             await Add(Title);

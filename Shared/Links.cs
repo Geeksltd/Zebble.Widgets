@@ -5,10 +5,7 @@ namespace Zebble
 {
     public class Link : TextView
     {
-        public Link()
-        {
-            Css.Width(Length.AutoStrategy.Content);
-        }
+        public Link() => Css.Width(Length.AutoStrategy.Content);
 
         public override async Task OnPreRender()
         {

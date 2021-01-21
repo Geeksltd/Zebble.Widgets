@@ -21,7 +21,12 @@ namespace Zebble
             await base.OnPreRender();
 
             Text.Css.Padding(all: 15).Width(95.Percent());
-            Chevron.Css.Font(size: 14).TextAlignment(Alignment.Middle).Padding(top: 10, bottom: 10).Height(new Length.BindingLengthRequest(Text.Height));
+
+            Chevron.Css
+                .Font(size: 14)
+                .TextAlignment(Alignment.Middle)
+                .Padding(top: 10, bottom: 10)
+                .Height(new Length.BindingLengthRequest(Text.Height));
 
             await Add(Text);
             await Add(Chevron);

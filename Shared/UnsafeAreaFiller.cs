@@ -6,8 +6,8 @@
         {
             var top = Device.Screen.SafeAreaInsets.Top;
 #if UWP
-            if (System.Diagnostics.Debugger.IsAttached && top < 30f)
-                top = 30f;
+            if (System.Diagnostics.Debugger.IsAttached && top < 20f)
+                top = 20f;
 #endif
 
             Css.Height(top);

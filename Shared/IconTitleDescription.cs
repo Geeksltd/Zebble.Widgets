@@ -29,7 +29,12 @@ namespace Zebble
             Icon.Css.Size(60);
 
             Icon.Css.Width(17.Percent()).Margin(top: 15, left: 15, bottom: 15);
-            VerticalRow.Css.Padding(left: 15, bottom: 15).Margin(top: 15).Width(75.Percent()).Height(new Length.BindingLengthRequest(Icon.Height));
+
+            VerticalRow.Css
+                .Padding(left: 15, bottom: 15)
+                .Margin(top: 15)
+                .Width(75.Percent())
+                .Height(new Length.BindingLengthRequest(Icon.Height));
 
             await VerticalRow.Add(Title);
             await VerticalRow.Add(Description);

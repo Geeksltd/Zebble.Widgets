@@ -9,10 +9,7 @@ namespace Zebble
 
         public Title() { }
 
-        internal Title(Bindable<string> titleBinding)
-        {
-            TitleItem.Bind("Text", () => titleBinding);
-        }
+        internal Title(Bindable<string> titleBinding) => TitleItem.Bind("Text", () => titleBinding);
 
         public override async Task OnPreRender()
         {

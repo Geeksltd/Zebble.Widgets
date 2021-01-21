@@ -9,10 +9,7 @@ namespace Zebble
 
         public Text() { }
 
-        internal Text(Bindable<string> textBinding)
-        {
-            TextItem.Bind("Text", () => textBinding);
-        }
+        internal Text(Bindable<string> textBinding) => TextItem.Bind("Text", () => textBinding);
 
         public override async Task OnPreRender()
         {
