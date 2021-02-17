@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    class Middle : Stack
+  public  class Middle : Stack
     {
         public override async Task OnPreRender()
         {
