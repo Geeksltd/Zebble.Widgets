@@ -45,8 +45,12 @@ namespace Zebble
 
             duration ??= 1500.Milliseconds();
 
-            X.BindTo(relative.Width, Width, (rw, w) => (relative.CalculateAbsoluteX() + (rw / 2)) - (w / 2));
-            Y.BindTo(relative.Height, rh => relative.CalculateAbsoluteY() + rh);
+            UIWorkBatch.RunSync(() =>
+            {
+                X.BindTo(relative.Width, Width, (rw, w) => (relative.CalculateAbsoluteX() + (rw / 2)) - (w / 2));
+                Y.BindTo(relative.Height, rh => relative.CalculateAbsoluteY() + rh);
+            });
+
             this.Visible();
 
             CancellationSource?.Cancel();
