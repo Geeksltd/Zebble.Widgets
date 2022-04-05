@@ -57,8 +57,12 @@ namespace Zebble
             CancellationSource?.Dispose();
             CancellationSource = new();
 
-            await Task.Delay(duration.Value, CancellationSource.Token)
-                      .ContinueWith((_) => this.Hide(), CancellationSource.Token);
+            try
+            {
+                await Task.Delay(duration.Value, CancellationSource.Token)
+                          .ContinueWith((_) => this.Hide(), CancellationSource.Token);
+            }
+            catch (OperationCanceledException) { }
         }
     }
 }
